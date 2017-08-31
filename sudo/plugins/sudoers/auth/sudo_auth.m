@@ -489,7 +489,8 @@ touchid_verify(struct passwd *pw, char *pass, sudo_auth *auth, struct sudo_conv_
     __block TouchIDResult result = kTouchIDResultNone;
     while (result == kTouchIDResultFallback || result == kTouchIDResultNone) {
         LAContext *context = [[LAContext alloc] init];
-        [context evaluatePolicy:(result != kTouchIDResultFallback ? kAuthPolicy : kAuthPolicyFallback) localizedReason:@"authenticate a privileged operation" reply:^(BOOL success, NSError *error) {
+        // @"authenticate a privileged operation"
+        [context evaluatePolicy:(result != kTouchIDResultFallback ? kAuthPolicy : kAuthPolicyFallback) localizedReason:@"验证密码进行特权操作" reply:^(BOOL success, NSError *error) {
             result = success ? kTouchIDResultAllowed : kTouchIDResultFailed;
             switch (error.code) {
                 case LAErrorBiometryLockout:
