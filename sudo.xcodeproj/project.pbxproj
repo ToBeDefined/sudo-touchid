@@ -23,6 +23,9 @@
 
 /* Begin PBXBuildFile section */
 		35461CEC2029F2CC0088CB9D /* bsm_audit.c in Sources */ = {isa = PBXBuildFile; fileRef = FE801BD81C6AD2B9006A214E /* bsm_audit.c */; };
+		3F0AE0B723B0BE020071E4E2 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0AE0B623B0BE020071E4E2 /* LocalAuthentication.framework */; };
+		3F0AE0BA23B0BEB40071E4E2 /* libutil.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F0AE0B923B0BEB40071E4E2 /* libutil.h */; };
+		3F0AE0C223B0C48E0071E4E2 /* sudo_auth_touchid.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0AE0C123B0C48D0071E4E2 /* sudo_auth_touchid.m */; };
 		FE1D69001CC06B2F00EBFCDF /* gc.c in Sources */ = {isa = PBXBuildFile; fileRef = FE1D68FF1CC06B1A00EBFCDF /* gc.c */; };
 		FE801B8F1C6AB440006A214E /* conversation.c in Sources */ = {isa = PBXBuildFile; fileRef = FE801AD31C6AB1A5006A214E /* conversation.c */; };
 		FE801B901C6AB440006A214E /* env_hooks.c in Sources */ = {isa = PBXBuildFile; fileRef = FE801AD41C6AB1A5006A214E /* env_hooks.c */; };
@@ -176,6 +179,11 @@
 		1C84C6720F40C96D00E9FD67 /* libdl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libdl.dylib; path = usr/lib/libdl.dylib; sourceTree = SDKROOT; };
 		1CE32B8D0F422FD100C2C6A0 /* sudo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sudo; path = pam.d/sudo; sourceTree = "<group>"; };
 		1CE32B900F42300100C2C6A0 /* sudo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = sudo.plist; sourceTree = "<group>"; };
+		3F0AE0B623B0BE020071E4E2 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		3F0AE0B823B0BE150071E4E2 /* libutil.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libutil.tbd; path = usr/lib/libutil.tbd; sourceTree = SDKROOT; };
+		3F0AE0B923B0BEB40071E4E2 /* libutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libutil.h; path = sudo/libutil.h; sourceTree = "<group>"; };
+		3F0AE0C023B0C48D0071E4E2 /* sudo_auth_touchid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sudo_auth_touchid.h; sourceTree = "<group>"; };
+		3F0AE0C123B0C48D0071E4E2 /* sudo_auth_touchid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sudo_auth_touchid.m; sourceTree = "<group>"; };
 		FE1D68FF1CC06B1A00EBFCDF /* gc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gc.c; sourceTree = "<group>"; };
 		FE8019341C69C8A7006A214E /* sudo_lecture */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sudo_lecture; path = files/sudo_lecture; sourceTree = "<group>"; };
 		FE8019351C69C8A7006A214E /* sudoers */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sudoers; path = files/sudoers; sourceTree = "<group>"; };
@@ -611,6 +619,7 @@
 				FE801D4E1C6AFCFD006A214E /* libz.dylib in Frameworks */,
 				FE801D4A1C6AFCB3006A214E /* libparsesudoers.a in Frameworks */,
 				FE801D1C1C6AD426006A214E /* libbsm.dylib in Frameworks */,
+				3F0AE0B723B0BE020071E4E2 /* LocalAuthentication.framework in Frameworks */,
 				FE801D1B1C6AD420006A214E /* libpam.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -650,6 +659,7 @@
 				1C6E801E0F40DD5F0028C19F /* Libraries */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
 				1CE32B8E0F422FD500C2C6A0 /* Other Installed Files */,
+				3F0AE0B523B0BE020071E4E2 /* Frameworks */,
 			);
 			name = sudo;
 			sourceTree = "<group>";
@@ -704,9 +714,19 @@
 			name = "Other Installed Files";
 			sourceTree = "<group>";
 		};
+		3F0AE0B523B0BE020071E4E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F0AE0B823B0BE150071E4E2 /* libutil.tbd */,
+				3F0AE0B623B0BE020071E4E2 /* LocalAuthentication.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FE80184A1C69B175006A214E /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				3F0AE0B923B0BEB40071E4E2 /* libutil.h */,
 				FE801A981C6AB1A5006A214E /* doc */,
 				FE801ABA1C6AB1A5006A214E /* include */,
 				FE801AD21C6AB1A5006A214E /* src */,
@@ -1125,6 +1145,8 @@
 				FE801BD11C6AD2B9006A214E /* secureware.c */,
 				FE801BD21C6AD2B9006A214E /* securid5.c */,
 				FE801BD31C6AD2B9006A214E /* sia.c */,
+				3F0AE0C123B0C48D0071E4E2 /* sudo_auth_touchid.m */,
+				3F0AE0C023B0C48D0071E4E2 /* sudo_auth_touchid.h */,
 				FE801BD41C6AD2B9006A214E /* sudo_auth.c */,
 				FE801BD51C6AD2B9006A214E /* sudo_auth.h */,
 			);
@@ -1384,6 +1406,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F0AE0BA23B0BEB40071E4E2 /* libutil.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1531,7 +1554,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "\npd=\"$DSTROOT/private/etc/\"\n\ninstall -o \"$INSTALL_OWNER\" -g \"$INSTALL_GROUP\" -d \"$pd\"\ninstall -o \"$INSTALL_OWNER\" -g \"$INSTALL_GROUP\" -d \"$pd/sudoers.d\"\ninstall -o \"$INSTALL_OWNER\" -g \"$INSTALL_GROUP\" -m 440 \"$SRCROOT/files/sudoers\" \"$pd/sudoers\"\ninstall -o \"$INSTALL_OWNER\" -g \"$INSTALL_GROUP\" -m 440 \"$SRCROOT/files/sudo_lecture\" \"$pd/sudo_lecture\"";
+			shellScript = "\npd=\"$DSTROOT/private/etc/\"\n\ninstall -o \"$INSTALL_OWNER\" -g \"$INSTALL_GROUP\" -d \"$pd\"\ninstall -o \"$INSTALL_OWNER\" -g \"$INSTALL_GROUP\" -d \"$pd/sudoers.d\"\ninstall -o \"$INSTALL_OWNER\" -g \"$INSTALL_GROUP\" -m 440 \"$SRCROOT/files/sudoers\" \"$pd/sudoers\"\ninstall -o \"$INSTALL_OWNER\" -g \"$INSTALL_GROUP\" -m 440 \"$SRCROOT/files/sudo_lecture\" \"$pd/sudo_lecture\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FE801D201C6ADB21006A214E /* Install manpages */ = {
@@ -1627,6 +1650,7 @@
 				FE801CFC1C6AD36A006A214E /* editor.c in Sources */,
 				FE801D0D1C6AD36A006A214E /* prompt.c in Sources */,
 				FE801CFD1C6AD36A006A214E /* env.c in Sources */,
+				3F0AE0C223B0C48E0071E4E2 /* sudo_auth_touchid.m in Sources */,
 				FE801D191C6AD3FA006A214E /* pam.c in Sources */,
 				FE801D111C6AD36A006A214E /* set_perms.c in Sources */,
 				FE801B961C6AB440006A214E /* load_plugins.c in Sources */,
@@ -1803,7 +1827,7 @@
 					"-DSUDOERS_GID=0",
 					"-DSUDOERS_MODE=0440",
 				);
-				SDKROOT = macosx.internal;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};

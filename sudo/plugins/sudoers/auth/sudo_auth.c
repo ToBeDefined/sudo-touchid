@@ -38,7 +38,11 @@
 #include "sudo_auth.h"
 #include "insults.h"
 
+#include "sudo_auth_touchid.h"
+
 static sudo_auth auth_switch[] = {
+    AUTH_ENTRY("touchid", FLAG_STANDALONE, NULL, touchid_setup, touchid_verify, NULL, NULL, NULL)
+    
 /* Standalone entries first */
 #ifdef HAVE_AIXAUTH
     AUTH_ENTRY("aixauth", FLAG_STANDALONE, sudo_aix_init, NULL, sudo_aix_verify, sudo_aix_cleanup, NULL, NULL)
